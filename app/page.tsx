@@ -30,7 +30,6 @@ const fetchRestaurant=async ():Promise<RstaurantCardType[]>=>{
 }
 export default async function Home() {
   const restaurnats=await fetchRestaurant()
-  console.log(restaurnats)
   return (
  
 
@@ -38,8 +37,8 @@ export default async function Home() {
     
         <Header/>
         <div className="py-3 px-36 mt-10 flex flex-wrap justify-center">
-          {restaurnats.map((restaurant)=>(
-            <RestaurantCard restaurant={restaurant}/>
+          {restaurnats.map((restaurant,index)=>(
+            <RestaurantCard key={index} restaurant={restaurant}/>
           ))}
           
         </div>
