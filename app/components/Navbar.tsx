@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import AuthModal from './AuthModal'
 
 export default function Navbar() {
     
@@ -11,12 +12,10 @@ export default function Navbar() {
         </Link>
         <div>
           <div className="flex">
-            <button
-              className="bg-blue-400 text-white border p-1 px-4 rounded mr-3"
-            >
-              Sign in
-            </button>
-            <button className="border p-1 px-4 rounded">Sign up</button>
+           
+            <AuthModal isSignIn/>
+            <AuthModal isSignIn={false}/>
+          
           </div>
         </div>
       </nav>
